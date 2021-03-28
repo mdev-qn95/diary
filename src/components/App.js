@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { database } from '../firebase'
+import _ from 'lodash'
 
 class App extends Component {
 
@@ -8,11 +9,22 @@ class App extends Component {
     // state
     this.state = {
       title: '',
-      body: ''
+      content: '',
+      notes: {}
     }
     // bind
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
+    this.renderNotes = this.renderNotes.bind(this)
+  }
+
+  // lifecycle
+  componentDidMount() {
+    database.on('value', snapshot => {
+      this.setState({
+        notes: snapshot.val()
+      })
+    })
   }
 
   // handle change
@@ -27,12 +39,24 @@ class App extends Component {
     e.preventDefault()
     const note = {
       title: this.state.title,
-      body: this.state.body,
+      content: this.state.content,
     }
     database.push(note)
     this.setState({
       title: '',
-      body: ''
+      content: ''
+    })
+  }
+
+  // render notes
+  renderNotes() {
+    return _.map(this.state.notes, (note, key) => {
+      return (
+        <div key="key">
+          <h2>{note.title}</h2>
+          <p>{note.content}</p>
+        </div>
+      )
     })
   }
 
@@ -47,13 +71,15 @@ class App extends Component {
               </div>
 
               <div className="form-group">
-                <input onChange={this.handleChange} value={this.state.body} type="text" name="body" className="form-control no-border" placeholder="Body..." required />
+                <textarea onChange={this.handleChange} value={this.state.content} type="text" name="content" className="form-control no-border" placeholder="Content..." required />
               </div>
 
               <div className="form-group">
                 <button className="btn btn-primary col-sm-12">Save</button>
               </div>
             </form>
+
+            {this.renderNotes()}
           </div>
         </div>
       </div>
