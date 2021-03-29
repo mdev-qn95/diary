@@ -1,5 +1,5 @@
-import {GET_NOTES} from '../actionTypes'
-import {database} from '../firebase'
+import { GET_NOTES } from '../actionTypes'
+import { database } from '../firebase'
 
 export function getNotes() {
     return dispatch => {
