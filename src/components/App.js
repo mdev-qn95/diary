@@ -53,8 +53,11 @@ class App extends Component {
     return _.map(this.state.notes, (note, key) => {
       return (
         <div key="key">
-          <h2>{note.title}</h2>
-          <p>{note.content}</p>
+          <div class="alert alert-success" role="alert">
+            <h4 class="alert-heading">{note.title}</h4>
+            <hr/>
+            <p>{note.content}</p>
+          </div>
         </div>
       )
     })
