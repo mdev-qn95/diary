@@ -5,19 +5,22 @@ import App from './components/App';
 import reportWebVitals from './reportWebVitals';
 
 // redux
-import {createStore, applyMiddleware} from 'redux'
-import {Provider} from 'react-redux'
-import {composeWithDevTools} from 'redux-devtools-extension'
+import { createStore, applyMiddleware } from 'redux'
+import { Provider } from 'react-redux'
+import { composeWithDevTools } from 'redux-devtools-extension'
+import rootReducer from './reducers'
 
 // create redux store -> reducers -> 'actions - actionType' | applyMiddleware()
-
-const store = createStore(composeWithDevTools())
+const store = createStore(rootReducer, composeWithDevTools())
 
 // provide the store to react
 
+
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <App />
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
