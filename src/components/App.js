@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import _ from 'lodash'
 import { connect } from 'react-redux'
-import { getNotes, saveNote } from '../actions/notesAction'
+import { getNotes, saveNote, deleteNote } from '../actions/notesAction'
 
 class App extends Component {
 
@@ -49,8 +49,9 @@ class App extends Component {
     return _.map(this.props.notes, (note, key) => {
       return (
         <div key="key">
-          <div class="alert alert-success" role="alert">
-            <h4 class="alert-heading">{note.title}</h4>
+          <div className="alert alert-success">
+            <button className="close" onClick={() => this.props.deleteNote(key)}>&times;</button>
+            <h4>{note.title}</h4>
             <hr />
             <p>{note.content}</p>
           </div>
@@ -94,4 +95,4 @@ function mapStateToProps(state, ownProps) {
   }
 }
 
-export default connect(mapStateToProps, { getNotes, saveNote })(App);
+export default connect(mapStateToProps, { getNotes, saveNote, deleteNote })(App);
