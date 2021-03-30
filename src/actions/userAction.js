@@ -21,5 +21,5 @@ export function facebookLogin() {
 }
 
 export function logout() {
-    return dispatch => auth.logout()
+    return dispatch => auth.signOut()
 }

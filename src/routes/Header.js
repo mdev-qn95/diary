@@ -20,7 +20,7 @@ class Header extends Component {
                     <div className="collapse navbar-collapse navbar-ex1-collapse">
                         <ul className="nav navbar-nav navbar-right" >
                             {
-                                this.props.user === null ? (<li><Link to="/login">Login</Link></li>) : (<li><Link to="/logout">logout</Link></li>)
+                                this.props.user === null ? (<li><Link to="/login">Login</Link></li>) : (<li><Link to="/logout" onClick={() => this.props.logout()}>logout</Link></li>)
                             }
                         </ul>
                     </div>
@@ -30,10 +30,10 @@ class Header extends Component {
     }
 }
 
-function mapStateToProps(state, ownProps){
+function mapStateToProps(state, ownProps) {
     return {
         user: state.user
     }
 }
 
-export default connect(mapStateToProps, {getUser, logout})(Header)
+export default connect(mapStateToProps, { getUser, logout })(Header)

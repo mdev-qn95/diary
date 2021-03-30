@@ -12,11 +12,11 @@ class Login extends Component {
                     </div>
 
                     <div className="col-sm-6">
-                        <button class="btn btn-danger btn-lg" onClick={this.props.googleLogin}>Login with Google</button>
+                        <button className="btn btn-danger btn-lg" onClick={this.props.googleLogin}>Login with Google</button>
                     </div>
                     <br />
                     <div className="col-sm-6">
-                        <button class="btn btn-primary btn-lg" onClick={this.props.facebookLogin}>Login with Facebook</button>
+                        <button className="btn btn-primary btn-lg" onClick={this.props.facebookLogin}>Login with Facebook</button>
                     </div>
 
                 </div>
