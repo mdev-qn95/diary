@@ -12,7 +12,7 @@ class Login extends Component {
                     <div className="col-sm-6">
                         <button class="btn btn-danger btn-lg">Login with Google</button>
                     </div>
-                    
+                    <br />
                     <div className="col-sm-6">
                         <button class="btn btn-primary btn-lg">Login with Facebook</button>
                     </div>
