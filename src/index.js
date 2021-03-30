@@ -12,32 +12,12 @@ import { composeWithDevTools } from 'redux-devtools-extension'
 import rootReducer from './reducers'
 import { BrowserRouter, Switch, Route, Link } from 'react-router-dom'
 import Login from './components/Login'
+import Header from './routes/Header'
 
 // create redux store -> reducers -> 'actions - actionType' | applyMiddleware()
 const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk)))
 
-const Header = () => (
-  <nav className="navbar navbar-default" role="navigation">
-    <div className="container-fluid">
-      <div className="navbar-header">
-        <button type="button" className="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-          <span className="sr-only">Toggle navigation</span>
-          <span className="icon-bar"></span>
-          <span className="icon-bar"></span>
-          <span className="icon-bar"></span>
-        </button>
-        <Link className="navbar-brand" to="/">DIARY</Link>
-      </div>
-      <div className="collapse navbar-collapse navbar-ex1-collapse">
-        <ul className="nav navbar-nav navbar-right" >
-          <li><Link to="/login">Login</Link></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-)
 // provide the store to react
-
 
 ReactDOM.render(
   <React.StrictMode>

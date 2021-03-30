@@ -19,3 +19,7 @@ export function googleLogin() {
 export function facebookLogin() {
     return dispatch => auth.signInWithPopup(facebookProvider)
 }
+
+export function logout() {
+    return dispatch => auth.logout()
+}
