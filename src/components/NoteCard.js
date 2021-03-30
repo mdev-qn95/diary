@@ -1,11 +1,9 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-export default class NoteCard extends Component {
-    render() {
-        return (
-            <div className="alert alert-success">
-                {this.props.children}
-            </div>
-        )
-    }
-}
+const NoteCard = (props) => (
+    <div className="alert alert-success">
+        {props.children}
+    </div>
+)
+
+export default NoteCard
