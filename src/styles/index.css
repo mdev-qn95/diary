@@ -42,3 +42,9 @@ body {
   font-size: 24px;
   font-weight: bold;
 }
+button a {
+  color: white;
+}
+a:hover{
+  text-decoration: none;
+}

@@ -55,7 +55,12 @@ class App extends Component {
           <p>{note.content}</p>
           <br />
           {note.uid === this.props.user.uid && (
-            <button className="btn btn-danger btn-sm" onClick={() => this.props.deleteNote(key)}>Delete</button>
+            <div>
+              <button className="btn btn-danger btn-sm" onClick={() => this.props.deleteNote(key)}>Delete</button>
+              <button className="btn btn-primary btn-sm" style={{ marginLeft: '5px' }}>
+                <Link to={`/${key}/edit`}>Update</Link>
+              </button>
+            </div>
           )}
         </NoteCard>
       )

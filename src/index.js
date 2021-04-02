@@ -16,6 +16,7 @@ import Header from './routes/Header'
 import LoadingComponent from './components/LoadingComponent'
 import AuthenticatedComponent from './components/AuthenticatedComponent'
 import NoteDetail from './components/NoteDetail';
+import NoteEdit from './components/NoteEdit';
 
 // create redux store -> reducers -> 'actions - actionType' | applyMiddleware()
 const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk)))
@@ -33,6 +34,7 @@ ReactDOM.render(
               <AuthenticatedComponent>
                 <Header />
                 <Route path="/:id" component={NoteDetail} exact={true} />
+                <Route path="/:id/edit" component={NoteEdit} exact={true} />
                 <Route path="/" component={App} exact={true} />
               </AuthenticatedComponent>
             </Switch>
