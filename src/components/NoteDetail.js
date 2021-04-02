@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-
+import SubmitComment from '../components/SubmitComment'
 
 class NoteDetail extends Component {
     render() {
@@ -12,7 +12,8 @@ class NoteDetail extends Component {
                     <div className="col-sm-6 col-sm-offset-3">
                         <h1>{note.title}</h1>
                         <p>{note.content}</p>
-                        <Link to="/">Back</Link>
+                        <SubmitComment />
+                        <Link to="/"> &#171; Back</Link>
                     </div>
                 </div>
             </div>

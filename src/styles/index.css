@@ -26,6 +26,15 @@ body {
   background-color: #d93025;
   border-color: unset;
 }
+.btn-success {
+  background-color: #00b894;
+  border-color: unset;
+  border-radius: 25px;
+}
+.btn-success:hover {
+  background-color: #55efc4;
+  border-color: unset;
+}
 .jumbotron{
   border-radius: 0px !important;
 }
