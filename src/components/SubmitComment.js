@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { saveComment } from '../actions/notesAction'
 
 class SubmitComment extends Component {
 
@@ -25,6 +26,8 @@ class SubmitComment extends Component {
             commentContent: this.state.commentContent,
             uid: this.props.uid
         }
+        this.props.saveComment(this.props.id, comment)
+        this.setState({ commentContent: '' })
     }
 
     render() {
@@ -55,4 +58,4 @@ function mapStateToProps(state, ownProps) {
     }
 }
 
-export default connect(mapStateToProps, {})(SubmitComment)
+export default connect(mapStateToProps, { saveComment })(SubmitComment)

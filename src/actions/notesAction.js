@@ -35,3 +35,9 @@ export function saveNote(note) {
 export function deleteNote(id) {
     return dispatch => database.child(id).remove()
 }
+
+export function saveComment(noteId, comment) {
+    return dispatch => {
+        database.child(noteId).child('comments').push(comment)
+    }
+}
