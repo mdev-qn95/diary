@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import { getNotes, saveNote, deleteNote } from '../actions/notesAction'
 import NoteCard from '../components/NoteCard'
 import { getUser } from '../actions/userAction'
+import { Link } from 'react-router-dom';
 
 class App extends Component {
 
@@ -33,6 +34,7 @@ class App extends Component {
     const note = {
       title: this.state.title,
       content: this.state.content,
+      uid: this.props.user.uid
     }
     this.props.saveNote(note)
     this.setState({
@@ -46,10 +48,15 @@ class App extends Component {
     return _.map(this.props.notes, (note, key) => {
       return (
         <NoteCard key={key}>
-          <button className="close" onClick={() => this.props.deleteNote(key)}>&times;</button>
-          <h4><b>{note.title}</b></h4>
+          <Link to={`/${key}`}>
+            <h4>{note.title}</h4>
+          </Link>
           <hr />
           <p>{note.content}</p>
+          <br />
+          {note.uid === this.props.user.uid && (
+            <button className="btn btn-danger btn-sm" onClick={() => this.props.deleteNote(key)}>Delete</button>
+          )}
         </NoteCard>
       )
     })
