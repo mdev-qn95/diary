@@ -9,21 +9,21 @@ body {
 }
 
 .btn-primary {
-  background-color: #039be5;
+  background-color: #0984e3;
   border-color: unset;
   border-radius: 25px;
 }
 .btn-primary:hover {
-  background-color: #039be5;
+  background-color: #74b9ff;
   border-color: unset;
 }
 .btn-danger {
-  background-color: #d93025;
+  background-color: #d63031;
   border-color: unset;
   border-radius: 25px;
 }
 .btn-danger:hover {
-  background-color: #d93025;
+  background-color: #ff7675;
   border-color: unset;
 }
 .btn-success {
