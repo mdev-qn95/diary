@@ -20,12 +20,6 @@ class App extends Component {
     this.renderNotes = this.renderNotes.bind(this)
   }
 
-  // lifecycle
-  // componentDidMount() {
-  //   this.props.getNotes()
-  //   this.props.getUser()
-  // }
-
   // handle change
   handleChange(e) {
     this.setState({
@@ -53,7 +47,7 @@ class App extends Component {
       return (
         <NoteCard key={key}>
           <button className="close" onClick={() => this.props.deleteNote(key)}>&times;</button>
-          <h4>{note.title}</h4>
+          <h4><b>{note.title}</b></h4>
           <hr />
           <p>{note.content}</p>
         </NoteCard>
