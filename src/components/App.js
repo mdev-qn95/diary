@@ -52,12 +52,12 @@ class App extends Component {
             <h4>{note.title}</h4>
           </Link>
           <hr />
-          <p>{note.content}</p>
+          <p style={{ textAlign: 'justify' }}>{note.content}</p>
           <br />
           {note.uid === this.props.user.uid && (
             <div>
-              <button className="btn btn-danger btn-sm" onClick={() => this.props.deleteNote(key)}>Delete</button>
-              <button className="btn btn-primary btn-sm" style={{ marginLeft: '5px' }}>
+              <button className="ant-btn ant-btn-primary ant-btn-round ant-btn-dangerous" onClick={() => this.props.deleteNote(key)}>Delete</button>
+              <button className="ant-btn ant-btn-primary ant-btn-round" style={{ marginLeft: '5px' }}>
                 <Link to={`/${key}/edit`}>Update</Link>
               </button>
             </div>
@@ -87,7 +87,7 @@ class App extends Component {
               </div>
 
               <div className="form-group">
-                <button className="btn btn-primary col-sm-12">Save</button>
+                <button className="ant-btn ant-btn-primary ant-btn-round col-sm-12">Save</button>
               </div>
             </form>
             <br />

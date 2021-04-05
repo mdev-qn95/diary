@@ -20,7 +20,7 @@ class NoteDetail extends Component {
                 <div className="row">
                     <div className="col-sm-6 col-sm-offset-3">
                         <h1>{note.title}</h1>
-                        <p>{note.content}</p>
+                        <p style={{ color: 'black' }}>{note.content}</p>
                         <SubmitComment id={this.props.match.params.id} />
                         {this.renderComments()}
                         <br />

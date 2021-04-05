@@ -52,11 +52,11 @@ class NoteEdit extends Component {
                             </div>
 
                             <div className="form-group">
-                                <textarea onChange={this.handleChange} value={this.state.content} type="text" name="content" rows="15" className="form-control no-border" placeholder="Content..." required />
+                                <textarea onChange={this.handleChange} value={this.state.content} type="text" name="content" rows="15" className="form-control no-border" style={{ textAlign: 'justify' }} placeholder="Content..." required />
                             </div>
 
                             <div className="form-group">
-                                <button className="btn btn-primary col-sm-12">Update</button>
+                                <button className="ant-btn ant-btn-primary ant-btn-round col-sm-12">Update</button>
                             </div>
                         </form>
                     </div>

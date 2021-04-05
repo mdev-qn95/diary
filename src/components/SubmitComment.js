@@ -44,7 +44,7 @@ class SubmitComment extends Component {
                             placeholder="Write comment..." required />
                     </div>
                     <div className="form-group">
-                        <button className="btn btn-success">Add comment</button>
+                        <button className="ant-btn ant-btn-primary ant-btn-round col-sm-12">Add comment</button>
                     </div>
                 </form>
             </div>

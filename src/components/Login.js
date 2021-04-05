@@ -30,11 +30,10 @@ class Login extends Component {
                     </div>
 
                     <div className="col-sm-6 text-center">
-                        <button className="btn btn-danger btn-lg" onClick={this.props.googleLogin}>Login with Google</button>
+                        <button className="ant-btn ant-btn-primary ant-btn-round ant-btn-dangerous button-acc col-sm-12 col-xs-6" onClick={this.props.googleLogin}>Login with Google</button>
                     </div>
-                    <br />
                     <div className="col-sm-6 text-center">
-                        <button className="btn btn-primary btn-lg" onClick={this.props.facebookLogin}>Login with Facebook</button>
+                        <button className="ant-btn ant-btn-primary ant-btn-round button-acc col-sm-12 col-xs-6" onClick={this.props.facebookLogin}>Login with Facebook</button>
                     </div>
 
                 </div>
