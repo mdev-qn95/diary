@@ -48,3 +48,30 @@ button a {
 a:hover{
   text-decoration: none;
 }
+
+.no-border {
+  box-shadow: none;
+  outline: none;
+  border-top: none !important;
+  border-left: none !important;
+  border-right: none !important;
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  box-shadow: none !important;
+  border-radius: unset;
+}
+
+.no-border:focus {
+  border-bottom: 1.5px solid #007bff;
+}
+img {
+  margin: auto;
+}
+@media only screen and (max-width: 768px) {
+  img {
+    margin: unset;
+  }
+  .username {
+    text-align: left;
+  }
+}

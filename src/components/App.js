@@ -72,7 +72,11 @@ class App extends Component {
       <div className="container-fluid">
         <br />
         <div className="row">
-          <div className="col-sm-5 col-xs-12">
+          <div className="col-sm-4 col-xs-12 text-center">
+            <img src={this.props.user.photoURL} className="img img-responsive img-circle" style={{ padding: '20px', height: '140px' }} />
+            <h4 className="username">Wellcome back {this.props.user.displayName}</h4>
+          </div>
+          <div className="col-sm-8 col-xs-12">
             <form onSubmit={this.handleSubmit}>
               <div className="form-group">
                 <input onChange={this.handleChange} value={this.state.title} type="text" name="title" className="form-control no-border" placeholder="Title..." required />
@@ -86,8 +90,9 @@ class App extends Component {
                 <button className="btn btn-primary col-sm-12">Save</button>
               </div>
             </form>
-          </div>
-          <div className="col-sm-7 col-xs-12">
+            <br />
+            <br />
+            <br />
             {this.renderNotes()}
           </div>
         </div>
